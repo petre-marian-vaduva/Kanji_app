@@ -37,6 +37,4 @@ def level(request, slug):
 def kanji_detail(request, slug):
     kanji = Kanji.objects.get(pk=slug)
     kanji_meaning = kanji.portuguese_set.all()
-    return render(request, 'kanji_quiz/kanji_detail.html', {
-        'kanji_detail': kanji_detail
-    })
+    return render(request, 'kanji_quiz/kanji_detail.html')
