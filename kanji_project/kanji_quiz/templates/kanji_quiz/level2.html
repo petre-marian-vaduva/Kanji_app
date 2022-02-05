@@ -16,7 +16,7 @@
     <ol>
         {% for kanji in all_kanji %}
             {% if kanji.level == 2 %}
-                <a href=""><li>{{ kanji.character }}</li></a>
+                <a href="{% url 'kanji_detail' kanji.pk %}"><li>{{ kanji.character }}</li></a>
             {% endif %}
         {% endfor %}
     </ol>

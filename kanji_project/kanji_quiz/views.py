@@ -33,8 +33,16 @@ def level(request, slug):
         return render(request, 'kanji_quiz/level5.html', {
             'all_kanji': all_kanji
         })
+    elif slug == 'numbers':
+        return render(request, 'kanji_quiz/numbers.html', {
+            'all_kanji': all_kanji
+        })
 
 def kanji_detail(request, slug):
     kanji = Kanji.objects.get(pk=slug)
     kanji_meaning = kanji.portuguese_set.all()
-    return render(request, 'kanji_quiz/kanji_detail.html')
+    return render(request, 'kanji_quiz/kanji_detail.html', {
+        'kanji': kanji,
+        'kanji_meaning': kanji_meaning
+    })
+

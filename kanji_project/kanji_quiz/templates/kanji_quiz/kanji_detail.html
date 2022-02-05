@@ -1,0 +1,8 @@
+<h1>{{ kanji.character }}</h1>
+<h2>Level: {{ kanji.level }}</h2>
+<h2>Is radical ?{{ kanji.is_radical }}</h2>
+
+{% for kanji in kanji_meaning %}
+    <h2>Meaning: {{ kanji.meaning }}</h2>
+    <h2>Example: {{ kanji.example }}</h2>
+{% endfor %}
