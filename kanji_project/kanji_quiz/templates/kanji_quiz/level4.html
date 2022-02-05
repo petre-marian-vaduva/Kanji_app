@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Level 4{% endblock %}
+
+{% block level4 %}
+    <li class="nav-item" role="presentation">
+        <a href="{% url 'level' 'level4' %}"><button class="nav-link active" id="n4-tab" data-bs-toggle="tab" data-bs-target="#n4" type="button" role="tab" aria-controls="n4" aria-selected="false">Level 4</button></a>
+    </li>
+{% endblock %}
+
+{% block tab_4 %}
+    <div class="tab-pane fade show active" id="n4" role="tabpanel" aria-labelledby="n4-tab">Level 4</div>
+{% endblock %}
+
+{% block body %}
+    <ol>
+        {% for kanji in all_kanji %}
+            {% if kanji.level == 4 %}
+                <a href=""><li>{{ kanji.character }}</li></a>
+            {% endif %}
+        {% endfor %}
+    </ol>
+{% endblock %}
