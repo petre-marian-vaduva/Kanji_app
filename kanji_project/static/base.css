@@ -1,0 +1,51 @@
+body {
+	background: url('images/sakura.jpg');
+    margin: 0;
+    padding: 0;
+    font-family:Poppins;
+}
+
+ul {
+    column-count: 4;
+    list-style-type: none;
+  }
+
+a {
+    text-decoration: none;
+    display: block;
+  }
+
+.page a {
+    width: 20px;
+    color:rgb(67, 194, 55);
+}
+
+.page li {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.page ul {
+    width: 100%;
+}
+ 
+
+h1{
+    font-size: 50px;
+    font-family:Audiowide;
+}
+
+p {
+    font-size: 24px;
+}
+
+.page {
+    padding-left: 200px;
+    padding-top: 50px;
+}
+
+

@@ -1,8 +1,39 @@
-<h1>{{ kanji.character }}</h1>
-<h2>Level: {{ kanji.level }}</h2>
-<h2>Is radical ?{{ kanji.is_radical }}</h2>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji details</title>
+    <link rel="stylesheet" href="{% static 'kanji_quiz/kanji_detail.css' %}" />
+</head>
+<body>
+    <div class="card-container">
 
-{% for kanji in kanji_meaning %}
-    <h2>Meaning: {{ kanji.meaning }}</h2>
-    <h2>Example: {{ kanji.example }}</h2>
-{% endfor %}
+      <div class="upper-container">
+      </div>
+  
+      <div class="lower-container">
+        <div>
+          <h1>{{ kanji.character }}</h1>
+          {% for kanji in kanji_meaning %}
+            <h3>Meaning: {{ kanji.meaning }}</h3>
+            <p>{{ kanji.example }}</p>
+          {% endfor %}</h3>
+        </div>
+        <div>
+          <a href="{% url 'level' kanji.level %}" class="btn">Level {{ kanji.level }}</a>
+        </div>
+      </div>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -13,24 +13,24 @@ def index(request):
 
 def level(request, slug):
     all_kanji = Kanji.objects.all()
-    if slug == 'level1': 
-        return render(request, 'kanji_quiz/level1.html', {
+    if slug == '1': 
+        return render(request, 'kanji_quiz/1.html', {
             'all_kanji': all_kanji
         })
-    elif slug == 'level2': 
-        return render(request, 'kanji_quiz/level2.html', {
+    elif slug == '2': 
+        return render(request, 'kanji_quiz/2.html', {
             'all_kanji': all_kanji
         })
-    elif slug == 'level3': 
-        return render(request, 'kanji_quiz/level3.html', {
+    elif slug == '3': 
+        return render(request, 'kanji_quiz/3.html', {
             'all_kanji': all_kanji
         })
-    elif slug == 'level4': 
-        return render(request, 'kanji_quiz/level4.html', {
+    elif slug == '4': 
+        return render(request, 'kanji_quiz/4.html', {
             'all_kanji': all_kanji
         })
-    elif slug == 'level5': 
-        return render(request, 'kanji_quiz/level5.html', {
+    elif slug == '5': 
+        return render(request, 'kanji_quiz/5.html', {
             'all_kanji': all_kanji
         })
     elif slug == 'numbers':

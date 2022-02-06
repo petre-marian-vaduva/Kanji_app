@@ -13,10 +13,12 @@
 {% endblock %}
 
 {% block body%}
-    <ol>
-        {% for kanji in all_kanji %}
-            <a href="{% url 'kanji_detail' kanji.pk %}"><li>{{ kanji.character }}</li></a>
-        {% endfor %}
-    </ol>
+    <section class='page'>
+        <ul>
+            {% for kanji in all_kanji %}
+                <a href="{% url 'kanji_detail' kanji.pk %}"><li>{{ kanji.character }}</li></a>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock %}
    

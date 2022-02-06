@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Level 1{% endblock %}
+
+{% block level1 %}
+    <li class="nav-item" role="presentation">
+        <a href="{% url 'level' '1' %}"><button class="nav-link active" id="n1-tab" data-bs-toggle="tab" data-bs-target="#n1" type="button" role="tab" aria-controls="n1" aria-selected="false">Level 1</button></a>
+    </li>
+{% endblock %}
+
+{% block tab_1 %}
+    <div class="tab-pane fade show active" id="n1" role="tabpanel" aria-labelledby="n2-tab">Level 1</div>
+{% endblock %}
+
+{% block body %}
+    <section class='page'>
+        <ul>
+            {% for kanji in all_kanji %}
+                {% if kanji.level == 1 %}
+                    <a href="{% url 'kanji_detail' kanji.pk %}"><li>{{ kanji.character }}</li></a>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
+
