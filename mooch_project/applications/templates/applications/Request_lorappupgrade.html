@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo</title>
+</head>
+<body>
+    <div>
+        <h3>Request Lorenzo Application Upgrade</h3>
+        <form class="form-horizontal" role="form" action="{{ action }}" method="POST">{% csrf_token %}
+          <div class="row">
+            <div class="column">
+              <div class="form-group">
+                {{form.instance_name.label_tag}}
+                <div class="col-bg-15">
+                  {{form.instance_name}}
+                </div>
+                {{form.instance_name.errors}}
+              </div>
+              <div class="form-group">
+                <label class="mr-sm-2 control-label">{{ form.app_version.label_tag }}</label>
+                <div class="col-sm-10">
+                  {{ form.app_version }}
+                </div>
+                {{ form.app_version.errors }}
+              </div>
+                      <div class="form-group">
+                <label class="mr-sm-2 control-label">{{ form.Server.label_tag }}</label>
+                <div class="col-sm-10">
+                  {{ form.Server }}
+                </div>
+                {{ form.Server.errors }}
+              </div>
+              <div class="form-group">
+                <label class="mr-sm-2 control-label">{{ form.check.label_tag }}</label>
+                  {{ form.check }}
+                {{ form.check.errors }}
+              </div> 
+            <div class="form-group">
+              <label class="mr-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <input type="submit" class="btn btn-primary" value="Submit">
+              </div>
+            </div>
+          </div>
+        </form>
+       </div>
+</body>
+</html>
