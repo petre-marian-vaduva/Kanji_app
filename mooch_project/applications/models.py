@@ -15,8 +15,6 @@ class lor_appversions(models.Model):
         return u"%s" %(self.app_version)
 
 
-
-
 class ipm_appversions(models.Model):
     app_version = models.CharField(max_length=50,unique=True)
     app_version_hier = models.CharField(max_length=25,unique=True,null=True)
