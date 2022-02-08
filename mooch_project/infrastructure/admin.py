@@ -2,7 +2,7 @@ from django.contrib import admin
 from infrastructure.models import Instance, Server
 
 class InstanceAdmin(admin.ModelAdmin):
-    list_display = ('instance_name', 'description', 'status')
+    list_display = ('instance_name', )
     list_filter = ('instance_name', )
 
 

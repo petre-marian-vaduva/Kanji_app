@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 from infrastructure.models import Instance
 from scheduler.models import Runtime
 
-
+   
 def requestipmappupgradeView(request):
    form = requestipmappupgradeform()
    if request.method == "POST":
@@ -13,7 +13,7 @@ def requestipmappupgradeView(request):
       if form.is_valid():
          instance_name= Instance.objects.get(pk=request.POST.get('instance_name'))
          app_version= ipm_appversions.objects.values_list('app_version', flat=True).get(pk=request.POST.get('app_version'))
-					   
+      
          app_upgrade=Runtime(Process='iPM_Application',instance_name=instance_name,app_version=app_version)
          app_upgrade.save()
          return HttpResponseRedirect('/Scheduler/jobs/iPM_Application/')
@@ -21,7 +21,8 @@ def requestipmappupgradeView(request):
    return render(request, 'applications\Request_ipmappupgrade.html',{
           'form': form,
           'errors': errors,
-   })								   
+   })				
+   				   
 def requestlorappupgradeView(request):
    form = requestlorappupgradeform()
    if request.method == "POST":
@@ -32,7 +33,7 @@ def requestlorappupgradeView(request):
 					   
          app_upgrade=Runtime(Process='LOR_Application',instance_name=instance_name,app_version=app_version)
          app_upgrade.save()
-         return HttpResponseRedirect('/Scheduler/jobs/iPM_Application/')
+         return HttpResponseRedirect('/Scheduler/jobs/LOR_Application/')
    errors = form.errors or None # form not submitted or it has errors
    return render(request, 'applications\Request_lorappupgrade.html',{
           'form': form,
