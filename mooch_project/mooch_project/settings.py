@@ -1,3 +1,4 @@
+
 """
 Django settings for mooch_project project.
 
@@ -125,3 +126,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#STATIC_ROOT = (os.path.join(SITE_ROOT, 'static_files/'))
+
+
+
+#STATIC_ROOT = (os.path.join(SITE_ROOT, 'static_files/'))
+
+
+#STATIC_ROOT = (os.path.join(SITE_ROOT, 'static_files/'))
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]

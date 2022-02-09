@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'abc';
+  src: url('/static/fonts/GT-Walsheim-Pro-Regular-Oblique.ttf'),
+  url('/static/fonts/GT-Walsheim-Pro-Regular.ttf'),
+  url('/static/fonts/GT-Walsheim-Pro-Light-Oblique.ttf'),
+  url('/static/fonts/GT-Walsheim-Pro-Light.ttf'),
+  url('/static/fonts/GT-Walsheim-Pro-Bold-Oblique.ttf'),
+  url('/static/fonts/GT-Walsheim-Pro-Bold.ttf'),
+}

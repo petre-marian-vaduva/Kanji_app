@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.home, name='home'),
     re_path(r'^applications/', include(('applications.urls','applications'),namespace="applications")),
+    re_path(r'^infrastructure/', include(('infrastructure.urls','infrastructure'),namespace="infrastructure")),
+    path('scheduler/', include('scheduler.urls')),
 ]
 

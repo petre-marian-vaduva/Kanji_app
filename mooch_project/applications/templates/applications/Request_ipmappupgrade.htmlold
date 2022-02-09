@@ -1,0 +1,50 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    {% comment %} <link rel="stylesheet" type="text/css" href="/static/css/style.css" /> {% endcomment %}
+</head>
+<body>
+    <div>
+        
+        
+        
+        {{ form.media }}
+        <h3>Request IPM Application Upgrade</h3>
+        
+        
+        
+        <form class="form-horizontal" role="form" action="{{ action }}" method="POST">{% csrf_token %}
+        <div class="row">
+        <div class="column">
+        <div class="form-group">
+        {{form.instance_name.label_tag}}
+        <div class="col-bg-15">
+        {{form.instance_name}}
+        </div>
+        {{form.instance_name.errors}}
+        </div>
+        
+        
+        
+        <div class="form-group">
+        <label class="mr-sm-2 control-label">{{ form.Target_version.label_tag }}</label>
+        <div class="col-sm-10">
+        {{ form.Target_version }}
+        </div>
+        {{ form.Target_version.errors }}
+        </div>
+        
+        <div class="form-group">
+        <label class="mr-sm-2 control-label">{{ form.Server.label_tag }}</label>
+        <div class="col-sm-10">
+        {{ form.Server }}
+        </div>
+        {{ form.Server.errors }}
+        </div>
+        <div class="form-group">
+        <label class="mr-sm-2 control-label">{{ form.check.label_tag }}</label>
+        {{ form.check }}
+        {{ form.check.errors }}
+        </div>
+</body>

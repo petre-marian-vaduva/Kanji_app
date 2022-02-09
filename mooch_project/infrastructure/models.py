@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from ipaddress import ip_address
 from django.db import models
 
@@ -6,9 +7,10 @@ class Instance(models.Model):
     instance_name = models.CharField(max_length=50)
     description = models.CharField(max_length=1024,null=False)
     status = models.CharField(max_length=3,null=False,default='A')
+    Instance_type = models.CharField(max_length=50, null=True)
 
     def __str__(self):
-        return u'%s%s%s' %(self.instance_name, self.description, self.status)
+        return u'%s' %(self.instance_name)
 
 class Server(models.Model):
     instance_name = models.ForeignKey(Instance, on_delete=models.CASCADE)
@@ -19,4 +21,4 @@ class Server(models.Model):
     role = models.CharField(max_length=50)
 
     def __str__(self):
-        return u'%s%s%s%s%s%s' %(self.instance_name, self.alias_name, self.server_name, self.ip_address, self.description, self.role)
+        return u'%s' %(self.server_name)

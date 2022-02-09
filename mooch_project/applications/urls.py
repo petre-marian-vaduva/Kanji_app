@@ -5,5 +5,5 @@ from applications import views
 
 urlpatterns = [
     re_path(r'^requestlorappupgrade/$',views.requestlorappupgradeView,name='requestlorappupgrade'),
-    re_path(r'^requestipmappupgrade$',views.requestipmappupgradeView,name='requestipmappupgrade'),
+    re_path(r'^requestipmappupgrade/$',views.requestipmappupgradeView,name='requestipmappupgrade'),
 ]
