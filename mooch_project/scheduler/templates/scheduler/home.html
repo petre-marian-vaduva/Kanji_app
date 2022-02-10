@@ -10,8 +10,37 @@
 </head>
 <body>
     <div class='container'>
-        <a href="{% url 'instances' 'Lorenzo' %}"><h2>Lorenzo</h2></a>
-        <a href="{% url 'instances' 'iPM' %}"><h2>iPM</h2></a>
+        <table class="table table-striped table-bordered table-hover table-sm">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">Instance</th>
+                    <th scope="col">Instance type</th>
+                    <th scope="col">Server</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Application</th>
+                    <th scope="col">Application_version</th>
+                    <th scope="col">Start time</th>
+                    <th scope="col">End time</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for instance in all_instances %}
+                    <tr>
+                        <td>{{ instance.instance_name.instance_name }}</td>
+                        <td><a href=""></a>{{ instance.instance_name.Instance_type }}</a></td>
+                        <td>{{ instance.server_name }}</td>
+                        <td>{{ instance.status }}</td>
+                        <td>{{ instance.application }}</td>
+                        <td>{{ instance.application_version }}</td>
+                        <td>{{ instance.start_datetime }}</td>
+                        <td>{{ instance.end_datetime }}</td>
+                        <td>{{ instance.description }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
+

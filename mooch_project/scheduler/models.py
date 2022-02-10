@@ -1,11 +1,13 @@
+from asyncio.windows_events import NULL
 from email.policy import default
+from tkinter import CASCADE
 from django.db import models
 from datetime import datetime
 
 class Runtime(models.Model):
     instance_name = models.ForeignKey('infrastructure.Instance', on_delete=models.CASCADE)
     server_name = models.ForeignKey('infrastructure.Server', on_delete=models.CASCADE)
-    status = models.CharField(max_length=50, default='Job requested')
+    status = models.CharField(max_length=50, default='Job requested',)
     application = models.CharField(max_length=50)
     application_version = models.CharField(max_length=50)
     start_datetime = models.DateTimeField(default=datetime.now())

@@ -10,7 +10,7 @@ class Instance(models.Model):
     Instance_type = models.CharField(max_length=50, null=True)
 
     def __str__(self):
-        return u'%s' %(self.instance_name)
+        return u'%s%s' %(self.instance_name, self.status)
 
 class Server(models.Model):
     instance_name = models.ForeignKey(Instance, on_delete=models.CASCADE)
