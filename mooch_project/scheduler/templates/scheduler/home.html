@@ -28,7 +28,7 @@
                 {% for instance in all_instances %}
                     <tr>
                         <td>{{ instance.instance_name.instance_name }}</td>
-                        <td><a href=""></a>{{ instance.instance_name.Instance_type }}</a></td>
+                        <td><a href="{% url 'instance' instance.instance_name.Instance_type %}">{{ instance.instance_name.Instance_type }}</a></td>
                         <td>{{ instance.server_name }}</td>
                         <td>{{ instance.status }}</td>
                         <td>{{ instance.application }}</td>

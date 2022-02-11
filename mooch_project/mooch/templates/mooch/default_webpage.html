@@ -9,17 +9,29 @@
     <link rel="stylesheet" href="static/css/bootstrap.css">
 </head>
 <body>
+
+  {% if user.is_authenticated %}
+  {% comment %} Hi {{ user.username }}! {% endcomment %}
   <div class='container'>
     <nav>
         <ul>
           <li><a href="#">Activity</a></li>
           <li><a href="#">Job Requests</a></li>
           <li><a href="/admin">Admin</a></li>
-          <li><a href="/applications/requestlorappupgrade/">Lorenzo</a></li>
-          <li><a href="/applications/requestipmappupgrade/">iPm</a></li>
+          <li><a href="/applications/requestlorappupgrade/">Lorenzo Jobs</a></li>
+          <li><a href="/applications/requestipmappupgrade/">iPm Jobs</a></li>
           <li><a href="/scheduler/">Scheduler</a></li>
+          <li><a href="/infrastructure/">Infrastructure</a></li>
         </ul>
       </nav>
+      <p><a href="{% url 'logout' %}">Log Out</a></p>
   </div>  
+
+{% else %}
+ <p>You are not logged in</p>
+ <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+ 
 </body>
 </html>

@@ -4,8 +4,10 @@ from applications.models import  lor_appversions, ipm_appversions
 from django.http import HttpResponseRedirect
 from infrastructure.models import Instance
 from scheduler.models import Runtime
+from django.contrib.auth.decorators import login_required
 
-   
+
+@login_required(login_url='/login/')
 def requestipmappupgradeView(request):
    form = requestipmappupgradeform()
    if request.method == "POST":
@@ -22,7 +24,9 @@ def requestipmappupgradeView(request):
           'form': form,
           'errors': errors,
    })				
-   				   
+
+
+@login_required(login_url='/login/')
 def requestlorappupgradeView(request):
    form = requestlorappupgradeform()
    if request.method == "POST":

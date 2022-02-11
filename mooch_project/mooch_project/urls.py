@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, re_path, include
 from . import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.home, name='home'),
     re_path(r'^applications/', include(('applications.urls','applications'),namespace="applications")),
-    re_path(r'^infrastructure/', include(('infrastructure.urls','infrastructure'),namespace="infrastructure")),
+    path('infrastructure/', include('infrastructure.urls')),
     path('scheduler/', include('scheduler.urls')),
+    path('', include('django.contrib.auth.urls')),
 ]
 
