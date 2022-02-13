@@ -9,7 +9,6 @@ from django.contrib.auth.decorators import permission_required
 
 
 
-@permission_required('applications.view_instance')
 @login_required(login_url='/login/')
 def requestipmappupgradeView(request):
    form = requestipmappupgradeform()
