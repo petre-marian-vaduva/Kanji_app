@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Runtime
 from infrastructure.models import Instance
+from django.contrib.auth.decorators import permission_required
+
 
 
 def jobs_home(request):
