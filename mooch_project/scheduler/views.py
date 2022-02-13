@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Runtime
 from infrastructure.models import Instance
 
+
 def jobs_home(request):
     all_instances = Runtime.objects.all()
     return render(request, 'scheduler/home.html', {
