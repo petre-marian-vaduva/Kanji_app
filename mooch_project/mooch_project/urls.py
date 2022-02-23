@@ -21,9 +21,10 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.home, name='home'),
-    re_path(r'^applications/', include(('applications.urls','applications'),namespace="applications")),
+    path('applications/', include('applications.urls')),
+    # re_path(r'^applications/', include(('applications.urls','applications'),namespace="applications")),
     path('infrastructure/', include('infrastructure.urls')),
     path('scheduler/', include('scheduler.urls')),
-    path('', include('django.contrib.auth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 

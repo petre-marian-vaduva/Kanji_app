@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'applications',
     'infrastructure',
     'scheduler',
-
+    'django_celery_beat',
+    'django_celery_results',
 ]
+
+CELERY_RESULT_BACKEND = "django-db"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,5 +146,14 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+# LOGIN_REDIRECT_URL = 'home'
+# LOGOUT_REDIRECT_URL = 'home'
+
+
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Africa/Nairobi'
+
