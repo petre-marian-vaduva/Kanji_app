@@ -31,9 +31,13 @@ app.conf.broker_url = BASE_REDIS_URL
 # app.conf.beat_scheduler = 'django_celery_beat.schedulers.DatabaseScheduler'
 
 app.conf.beat_schedule = {
-    'add-every-6-seconds': {
-        'task': 'sum_two_numbers',
-        'schedule': 6.0,
-        'args': (2, 3)
+    # 'add-every-6-seconds': {
+    #     'task': 'sum_two_numbers',
+    #     'schedule': 6.0,
+    #     'args': (2, 3)
+    # },
+    'test_script1': {
+        'task': 'script1',
+        'schedule': 6.0
     },
 }
