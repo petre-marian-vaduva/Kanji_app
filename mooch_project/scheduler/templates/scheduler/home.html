@@ -22,6 +22,7 @@
                     <th scope="col">Start time</th>
                     <th scope="col">End time</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Jobs</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,13 +30,14 @@
                     <tr>
                         <td>{{ instance.instance_name.instance_name }}</td>
                         <td><a href="{% url 'instance' instance.instance_name.Instance_type %}">{{ instance.instance_name.Instance_type }}</a></td>
-                        <td>{{ instance.server_name }}</td>
+                        <td>{{ instance.server_name.server_name }}</td>
                         <td>{{ instance.status }}</td>
                         <td>{{ instance.application }}</td>
                         <td>{{ instance.application_version }}</td>
                         <td>{{ instance.start_datetime }}</td>
                         <td>{{ instance.end_datetime }}</td>
                         <td>{{ instance.description }}</td>
+                        <td>{{ instance.job.job }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
