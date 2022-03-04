@@ -12,7 +12,7 @@ class TasksAdmin(admin.ModelAdmin):
     list_display = ('task',)
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ('job', 'task')
+    list_display = ('job', 'task', 'order')
 
 admin.site.register(Runtime, RuntimeAdmin)
 admin.site.register(Jobs, JobsAdmin)

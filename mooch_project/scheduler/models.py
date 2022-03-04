@@ -41,6 +41,7 @@ class Runtime(models.Model):
     end_datetime = models.DateTimeField(default=datetime.now(), null=True)
     description = models.CharField(max_length=50, default='pending',null=True)
     job = models.ForeignKey(Jobs, on_delete=models.CASCADE, null=True)
+    order = models.IntegerField(null=True)
     flag = models.BooleanField(default=False, null=True)
 
     class Meta:
