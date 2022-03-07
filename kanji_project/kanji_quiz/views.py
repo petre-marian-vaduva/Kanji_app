@@ -84,3 +84,16 @@ def update(request, slug):
         'all_kanji': all_kanji
     })
 
+def delete(request, slug):
+    kanji = Kanji.objects.get(pk=slug)
+    kanji_row = Kanji.objects.get(pk=slug)
+    portuguese_row = Portuguese.objects.get(character_id=slug)
+    if request.method == 'POST':
+        kanji_row.delete()
+        portuguese_row.delete()
+        return HttpResponseRedirect('/')
+
+    return render(request, 'kanji_quiz/delete.html', {
+        'kanji_row': kanji_row, 
+        'kanji': kanji
+    })
