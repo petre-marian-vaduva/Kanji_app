@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block design %}
+    <link rel="stylesheet" href="{% static 'kanji_quiz/form.css' %}">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+{% endblock %}
 
 {% block title%}Home{% endblock %}
 
@@ -13,6 +19,7 @@
 {% endblock %}
 
 {% block body%}
+
     <section class='page'>
         <ul>
             {% for kanji in all_kanji %}
@@ -20,5 +27,31 @@
             {% endfor %}
         </ul>
     </section>
+    
+
+    
+    <div class="container-fluid my_form">
+        <form action="/" method='POST' class="login-form">
+            {% csrf_token %}
+           
+            {% for field in kanji_form %}
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}            
+            {% endfor %}
+     
+            {% for field in portuguese_form %}
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            {% endfor %}
+            <div class="d-grid gap-2 col-6 mx-auto form-input-material">
+                <button type="submit" class="btn btn-primary btn-ghost my_button">Add</button>
+            </div>
+        </form>
+        
+    </div>
+
+
 {% endblock %}
    
