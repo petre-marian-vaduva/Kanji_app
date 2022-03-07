@@ -31,7 +31,7 @@
 
     
     <div class="container-fluid my_form">
-        <form action="/" method='POST' class="login-form">
+        <form action="/" method='POST' class="login-form" autocomplete="off">
             {% csrf_token %}
            
             {% for field in kanji_form %}
