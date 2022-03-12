@@ -1,4 +1,4 @@
-from kanji_quiz.models import Kanji, Portuguese
+from kanji_quiz.models import Kanji
 from django import forms
 from django.forms import ModelForm
 
@@ -6,7 +6,7 @@ class KanjiForm(forms.ModelForm):
     class Meta:
         model = Kanji
         fields = [
-            'character', 'level', 'is_number', 'is_radical'
+            'character', 'level', 'is_number', 'is_radical', 'meaning', 'example'
         ]
         labels = {
             'character': 'Enter a kanji',
@@ -17,16 +17,7 @@ class KanjiForm(forms.ModelForm):
         widgets = {
             'character': forms.TextInput(attrs={'placeholder': '漢字'}),
             'example': forms.TextInput(attrs={'placeholder': '漢字'}),
-            'is_number': forms.CheckboxInput()
-
-        }
-
-class PortugueseForm(forms.ModelForm):
-    class Meta:
-        model = Portuguese
-        fields = [
-            'meaning', 'example'
-        ]
-        widgets = {
-            'example': forms.TextInput(),
+            'is_number': forms.CheckboxInput(),
+            'meaning': forms.TextInput(),
+            'example': forms.TextInput()
         }

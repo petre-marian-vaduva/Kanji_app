@@ -15,20 +15,21 @@
       </div>
   
       <div class="lower-container">
+
         <div>
           <h1>{{ kanji.character }}</h1>
-          {% for kanji in kanji_meaning %}
+
             <h3>Meaning: {{ kanji.meaning }}</h3>
             <p>{{ kanji.example }}</p>
-          {% endfor %}</h3>
         </div>
+
         <div>
-          <a href="{% url 'level' kanji.level %}" class="btn">Level {{ kanji.level }}</a>
+            <a href="{% url 'level' kanji.level %}" class="btn">{{ kanji.level }}</a>
           <a href="{% url 'update' kanji.pk %}" class="btn">Update</a>
           <a href="{% url 'delete' kanji.pk %}" class="btn">Delete</a>
         </div>
-      </div>
 
+      </div>
     </div>
 </body>
 </html>
