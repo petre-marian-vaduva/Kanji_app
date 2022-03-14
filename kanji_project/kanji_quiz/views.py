@@ -47,6 +47,10 @@ def level(request, slug):
         return render(request, 'kanji_quiz/numbers.html', {
             'all_kanji': all_kanji
         })
+    else:
+        return render(request, 'kanji_quiz/index.html')
+
+    
 
 def kanji_detail(request, slug):
     kanji = Kanji.objects.get(pk=slug)
@@ -82,3 +86,6 @@ def delete(request, slug):
         'kanji_row': kanji_row, 
         'kanji': kanji
     })
+
+def search(request):
+    return render(request, 'kanji_quiz/search.html')

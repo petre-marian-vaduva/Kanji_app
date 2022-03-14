@@ -6,5 +6,6 @@ urlpatterns = [
     path('<slug>/', views.level, name='level'),
     path('kanji_detail/<slug>/', views.kanji_detail, name='kanji_detail'),
     path('update/<slug>', views.update, name='update'),
-    path('delete/<slug>', views.delete, name='delete')
+    path('delete/<slug>', views.delete, name='delete'),
+    path('search/search/', views.search, name='search')
 ]

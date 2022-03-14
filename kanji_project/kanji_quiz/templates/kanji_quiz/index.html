@@ -18,10 +18,42 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Home</div>
 {% endblock %}
 
+{% block form %}
+  <button type="button" class="btn btn-primary btn_form" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Add Kanji
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="/" method='POST' class="login-form" autocomplete="off">
+                {% csrf_token %}
+               
+                {% for field in form %}
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}            
+                {% endfor %}
+    
+                <div class="d-grid gap-2 col-6 mx-auto form-input-material">
+                    <button type="submit" class="btn btn-primary btn-ghost my_button">Add</button>
+                </div>
+            </form>
+        </div>
+        {% comment %} <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </div>
+{% endblock form %}
+
 {% block body%}
-
-
-
 </div>
     <section class='page'>
         <ul>
@@ -33,7 +65,7 @@
     
 
     
-    <div class="container-fluid my_form">
+    {% comment %} <div class="container-fluid my_form">
         <form action="/" method='POST' class="login-form" autocomplete="off">
             {% csrf_token %}
            
@@ -48,7 +80,7 @@
             </div>
         </form>
         
-    </div>
+    </div> {% endcomment %}
 
 
 {% endblock %}

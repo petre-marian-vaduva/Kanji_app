@@ -24,7 +24,7 @@
         </div>
 
         <div>
-            <a href="{% url 'level' kanji.level %}" class="btn">{{ kanji.level }}</a>
+            <a href="{% url 'level' kanji.level %}" class="btn">Level {{ kanji.level }}</a>
           <a href="{% url 'update' kanji.pk %}" class="btn">Update</a>
           <a href="{% url 'delete' kanji.pk %}" class="btn">Delete</a>
         </div>

@@ -2,6 +2,12 @@
 
 {% block title %}Level 2{% endblock %}
 
+{% block form %}
+<button type="button" class="btn btn-primary btn_form" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Add Kanji
+  </button>
+{% endblock form %}
+
 {% block level2 %}
     <li class="nav-item" role="presentation">
         <a href="{% url 'level' '2' %}"><button class="nav-link active" id="n2-tab" data-bs-toggle="tab" data-bs-target="#n2" type="button" role="tab" aria-controls="n2" aria-selected="false">Level 2</button></a>

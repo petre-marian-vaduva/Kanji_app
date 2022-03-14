@@ -48,4 +48,26 @@ p {
     padding-top: 50px;
 }
 
+.modal-header {
+    background-color: rgb(230, 219, 222);
+}
 
+
+.modal-body {
+    background-color: rgb(230, 219, 222);
+}
+
+
+
+.btn-close {
+    background-color: rgb(171, 57, 194);
+}
+
+.btn_form {
+    background-color: rgb(15, 146, 15);
+    border-radius: 100px;
+}
+
+.btn_form:hover {
+    background-color: rgb(176, 78, 196);
+}

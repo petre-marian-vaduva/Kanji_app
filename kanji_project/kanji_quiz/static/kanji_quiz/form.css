@@ -5,10 +5,10 @@
   background: url('images/sakura.jpg');
 }
 
-/* .btn {
+.btn {
     padding: 8px 20px;
     border-radius: 0;
-} */
+}
 
 .login-form {
     display: flex;
@@ -16,9 +16,8 @@
     align-items: center;
     padding: 50px 40px;
     color: white;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgb(150, 46, 211);
     border-radius: 10px;
-    
 }
 
 .form-input-material {
@@ -29,5 +28,9 @@
     width: 100%;
     margin: 18px 0 9px 0;
     border-radius: 30px;
+    background-color: rgb(176, 78, 196);
 }
 
+.my_button:hover {
+    background-color: rgb(173, 59, 196);
+}
