@@ -1,3 +1,4 @@
+from wsgiref.util import request_uri
 from django.shortcuts import redirect, render
 from django.http import HttpResponseRedirect
 from .models import Kanji
@@ -15,6 +16,12 @@ def index(request):
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')
+    elif request.method == 'GET':
+        searched = request.GET['user']
+        all_kanji = Kanji.objects.filter(meaning__icontains=searched)
+        return render(request, 'kanji_quiz/index.html', {
+            'all_kanji': all_kanji
+        })    
 
     return render(request, 'kanji_quiz/index.html', {
         'all_kanji': all_kanji,
@@ -87,5 +94,7 @@ def delete(request, slug):
         'kanji': kanji
     })
 
-def search(request):
-    return render(request, 'kanji_quiz/search.html')
+# def search(request):
+
+#     return render(request, 'kanji_quiz/index.html')
+
