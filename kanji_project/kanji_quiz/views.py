@@ -15,13 +15,7 @@ def index(request):
         form = KanjiForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/')
-    elif request.method == 'GET':
-        searched = request.GET['user']
-        all_kanji = Kanji.objects.filter(meaning__icontains=searched)
-        return render(request, 'kanji_quiz/index.html', {
-            'all_kanji': all_kanji
-        })    
+            return HttpResponseRedirect('/')   
 
     return render(request, 'kanji_quiz/index.html', {
         'all_kanji': all_kanji,
@@ -94,7 +88,12 @@ def delete(request, slug):
         'kanji': kanji
     })
 
-# def search(request):
-
-#     return render(request, 'kanji_quiz/index.html')
+def search(request):
+    if request.method == 'GET':
+        searched = request.GET['user']
+        all_kanji = Kanji.objects.filter(meaning__icontains=searched)
+        return render(request, 'kanji_quiz/index.html', {
+            'all_kanji': all_kanji
+        }) 
+    return render(request, 'kanji_quiz/index.html') 
 
