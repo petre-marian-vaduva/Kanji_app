@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import Kanji
 from kanji_quiz.forms import KanjiForm
 from django.urls import reverse
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -21,6 +21,7 @@ def index(request):
         'all_kanji': all_kanji,
         'form': form,
     })
+
 
 def level(request, slug):
     all_kanji = Kanji.objects.all()
@@ -59,7 +60,7 @@ def kanji_detail(request, slug):
         'kanji': kanji
     })
 
-
+@login_required(login_url='/login/')
 def update(request, slug):
     all_kanji = Kanji.objects.all()
     row_kanji = Kanji.objects.get(pk=slug)
@@ -75,6 +76,7 @@ def update(request, slug):
         'all_kanji': all_kanji
     })
 
+
 def delete(request, slug):
     kanji = Kanji.objects.get(pk=slug)
     kanji_row = Kanji.objects.get(pk=slug)
@@ -87,6 +89,7 @@ def delete(request, slug):
         'kanji_row': kanji_row, 
         'kanji': kanji
     })
+
 
 def search(request):
     if request.method == 'GET':

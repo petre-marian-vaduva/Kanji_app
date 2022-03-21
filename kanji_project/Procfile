@@ -1,1 +1,0 @@
-web: gunicorn kanji_project.wsgi
