@@ -76,8 +76,9 @@
             </div>
         {% block form %}
         {% endblock form %}
-
-
+        
+        <a href="{% url 'logout'%}">Log out</a>
+        
         <form class="d-flex" action="/search" method='GET'>
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name='user'>
             <button class="btn btn-outline-success" type="submit">Search</button>

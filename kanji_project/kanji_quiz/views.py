@@ -76,7 +76,7 @@ def update(request, slug):
         'all_kanji': all_kanji
     })
 
-
+@login_required(login_url='/login/')
 def delete(request, slug):
     kanji = Kanji.objects.get(pk=slug)
     kanji_row = Kanji.objects.get(pk=slug)
